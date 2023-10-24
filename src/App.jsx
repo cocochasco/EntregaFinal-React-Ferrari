@@ -5,7 +5,7 @@ function App() {
   return (
     <>
     <NavBar />
-    <ItemListContainer greeting={"Welcome! We are ONESTA!"}/>
+    <ItemListContainer />
     </>
    )
 }
