@@ -1,4 +1,4 @@
-import carrito from "../../../images/carrito.svg"
+import carrito from "../../../../images/carrito.svg"
 import { Notification } from "./Notification"
 
 export const CartWidget = () => {
