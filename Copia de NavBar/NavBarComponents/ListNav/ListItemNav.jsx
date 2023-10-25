@@ -1,1 +1,0 @@
-export const NavBarListItem = (props) => <li className="li__listaNav"><a href={props.href}>{props.li}</a></li>
