@@ -3,7 +3,7 @@ import logo  from "/Users/thomasferrari/Desktop/React/ecommerce-onesta/ecommerce
 export const Logo = () =>  {
     return (
         <a href="#">
-        <img src={logo} className="navBar-logo"/>
+        <img src={logo} className="navBar-logo" alt="logo"/>
         </a>
     )
 }

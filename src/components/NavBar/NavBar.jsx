@@ -1,17 +1,19 @@
-import "./css/NavBar.css"
+import "../../App.css"
 
 import { Logo } from "./NavBarComponents/Logo"
-import { ListaNav } from "./NavBarComponents/ListNav/ListNav"
+import { ListNav } from "./NavBarComponents/ListNav/ListNav"
 import { CartWidget } from "./NavBarComponents/CartWidget/CartWidget";
  
 export const NavBar = () => {
     return (
         <>
-        <nav>
-          <Logo />
-          <ListaNav />
-          <CartWidget />
-        </nav>
+        <header>
+          <nav>
+            <Logo />
+            <ListNav />
+           <CartWidget />
+          </nav>
+        </header>
         </>
      )
 };

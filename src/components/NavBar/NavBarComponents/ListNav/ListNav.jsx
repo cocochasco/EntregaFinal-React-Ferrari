@@ -1,6 +1,6 @@
 import { NavBarListItem } from './ListItemNav'
 
-export const ListaNav = () =>  {
+export const ListNav = () =>  {
     return (
         <ul className="ul__listaNav">
             <NavBarListItem li="Nosotras" href="#"/>

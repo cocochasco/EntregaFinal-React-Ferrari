@@ -1,4 +1,4 @@
-import './css/ItemListContainer.css'
+import "../../App.css"
 import { ItemList } from './ItemList'
 
 export const ItemListContainer = () => {

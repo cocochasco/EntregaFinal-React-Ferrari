@@ -5,7 +5,7 @@ export const CartWidget = () => {
     return (
         <div className="cartWidget">
             <a href="# ">
-                <img src={carrito} className="cartWidget__img"/>
+                <img src={carrito} className="cartWidget__img" alt="carrito"/>
             </a>
             <Notification cantidad={1} />
         </div>
