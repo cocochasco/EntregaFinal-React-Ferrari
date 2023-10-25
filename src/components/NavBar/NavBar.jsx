@@ -8,9 +8,9 @@ export const NavBar = () => {
     return (
         <>
         <nav>
-            <Logo />
-            <ListaNav />
-            <CartWidget />
+          <Logo />
+          <ListaNav />
+          <CartWidget />
         </nav>
         </>
      )
