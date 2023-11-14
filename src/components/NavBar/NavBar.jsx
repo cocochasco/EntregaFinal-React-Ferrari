@@ -1,3 +1,6 @@
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+
 import "../../App.css"
 
 import { Logo } from "./NavBarComponents/Logo"
@@ -9,9 +12,13 @@ export const NavBar = () => {
         <>
         <header>
           <nav>
-            <Logo />
-            <ListNav />
-           <CartWidget />
+            <Navbar className='nav' >
+              <Container>
+                  <Logo />
+                  <ListNav />
+                  <CartWidget />
+                </Container>
+            </Navbar>  
           </nav>
         </header>
         </>

@@ -1,11 +1,20 @@
-import { NavBarListItem } from './ListItemNav'
+import Nav from "react-bootstrap/Nav"
+import { NavLink } from "react-router-dom"
+
+import products from "../../../../data/products-onesta.json"
+
+const categories = products.map( item => item.category)
+
+const sameCategories = new Set(categories)
 
 export const ListNav = () =>  {
     return (
-        <ul className="ul__listaNav">
-            <NavBarListItem li="Nosotras" href="#"/>
-            <NavBarListItem li="Salado" href="#"/>
-            <NavBarListItem li="Dulce" href="#"/>    
-        </ul>
+        <Nav>
+            {[...sameCategories].map(category => 
+            <NavLink to={`/category/${category}`}>
+                <span className="nav-link">{category}</span>
+            </NavLink>
+            )}
+        </Nav>
     )
 }

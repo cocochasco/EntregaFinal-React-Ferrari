@@ -6,11 +6,11 @@
     align-items: center;
 }
 
-nav {
+.nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #F5E2BB;
+    background-color: #F5E2BB
   
     
 }
