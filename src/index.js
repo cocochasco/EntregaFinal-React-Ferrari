@@ -1,7 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { initializeApp } from "firebase/app";
+
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDQ0Ac90y9h0W2ASXrhLt0JeihOROV64Pc",
+  authDomain: "ecommerceonesta.firebaseapp.com",
+  projectId: "ecommerceonesta",
+  storageBucket: "ecommerceonesta.appspot.com",
+  messagingSenderId: "268206025835",
+  appId: "1:268206025835:web:3301a39205c84e1bd6d52e"
+};
+
+const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -9,8 +22,4 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 

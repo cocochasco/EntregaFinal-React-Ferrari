@@ -1,17 +1,26 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { Container } from "react-bootstrap"
+import { getFirestore, doc, getDoc } from "firebase/firestore"
 
 import { ItemDetail} from "./ItemDetail"
-
-import products from "../../data/products-onesta.json"
 
 export const ItemDetailContainer = () => {
     const [itemId, setItemId] = useState(null)
 
     const {id} = useParams()
-   
+
     useEffect(() => {
+        const database = getFirestore();
+
+        const refDoc = doc(database, "items", id) 
+
+        getDoc(refDoc).then((snapshot) => {
+            setItemId({id: snapshot.id, ...snapshot.data()})
+        })
+    }, [id])
+   
+  /*   useEffect(() => {
         const promise = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(products);
@@ -21,7 +30,7 @@ export const ItemDetailContainer = () => {
             const findItemById = products.find( (item) => item.id === Number(id) );
             setItemId(findItemById)
         })
-    }, [id])
+    }, [id]) */
     
     return (
         itemId ? 
