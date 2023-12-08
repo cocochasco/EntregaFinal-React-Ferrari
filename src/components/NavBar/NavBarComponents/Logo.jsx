@@ -7,6 +7,5 @@ export const Logo = () =>  {
             <Link to="/">
                 <img src={logo} className="navBar-logo" alt="logo"/>
             </Link>
-   
     )
 }
