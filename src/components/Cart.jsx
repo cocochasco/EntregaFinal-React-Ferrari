@@ -69,13 +69,12 @@ export const Cart = () => {
     return (
         <Container className="d-flex flex-column mt-3 align-items-center w-50" >
             <h1>Carrito de compras</h1>
-            <Table striped bordered hover size="sm">
-                <thead>
+            <Table striped bordered hover size="sm" style={{textAlign: "center"}}>
+                <thead >
                     <tr>
                       <th>Producto</th>
                       <th>Cantidad</th>
                       <th>Imagen</th>
-                      <th>Precio</th>
                       <th>Eliminar</th>
                     </tr>
                 </thead>
@@ -84,9 +83,8 @@ export const Cart = () => {
                 <tr key={item.id} >
                   <td>{item.title}</td>
                   <td>{item.quantity}</td>
-                  <td><img src={item.pictureURL} alt={item.title} style={{ width: '5rem' }}/></td>
                   <td>{item.price}</td>
-                  <td> <button onClick={() => onRemove(item.id)}>X</button> </td>
+                  <td><Button variant="success" onClick={() => onRemove(item.id)}>X</Button></td>
                 </tr>
                 </tbody>
                 

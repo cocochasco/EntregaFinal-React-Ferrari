@@ -35,7 +35,7 @@ export const ItemListContainer1 = () => {
                     })
                 )
             }).finally(() => setLoading(false))
-            ), 2000)
+            ), 1000)
         )}
         promise()
     }, [id])

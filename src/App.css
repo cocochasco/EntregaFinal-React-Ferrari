@@ -11,21 +11,18 @@
     align-items: center;
     justify-content: space-between;
     background-color: #F5E2BB
-  
     
 }
 .navBar-logo {
     height: 3rem;
   }
 
-.ul__listaNav {
+
+.Navlink{
     display: flex;
     list-style: none;
     height: .1rem;
 
-}
-
-.li__listaNav a{
     color: black;
     padding: .6rem;
     text-decoration: none;
