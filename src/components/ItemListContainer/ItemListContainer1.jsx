@@ -11,54 +11,38 @@ import {
 import "../../App.css"
 import { ItemList } from './ItemList'
 
-
-
-
 export const ItemListContainer1 = () => {
     const [item, setItem] = useState([]) 
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     const {id} = useParams()
 
     useEffect(() => {
+        setLoading(true)
         const db = getFirestore();
-
-        const refCollection = !id //poner en un hook!
+        
+        const refCollection = !id 
         ? collection(db, "items")
         : query(collection(db, "items"), where("categoryId", "==", id ))
 
-        getDocs(refCollection).then((snapshot) => {
-            if (snapshot.exists) return <h1>No results</h1>
-            else 
-            setItem(
-                snapshot.docs.map((doc) => {
-                    return { id:doc.id, ...doc.data()}
-                })
-            )
-        })
-    }, [id])//Combinar con el de abajo
-    
-    /* useEffect (() => {
-        const promise = new Promise (resolve => 
-                setTimeout(() => resolve(products), 2000)
-            )
-            promise 
-                .then(products => {
-                    if(!id) {
-                        setItem(products)
-                    }else {
-                        const productsByCategory = products.filter(
-                            item => item.category === id
-                        )
-                        setItem(productsByCategory)
-                    }
-                })
-                .finally(() => setLoading(false))
-    },[id]) */
-
+        function promise() {new Promise (resolve => 
+            setTimeout(() => resolve(getDocs(refCollection).then((snapshot) => {
+                if (snapshot.exists) return <h1>No results</h1>
+                else 
+                setItem(
+                    snapshot.docs.map((doc) => {
+                        return { id:doc.id, ...doc.data()}
+                    })
+                )
+            }).finally(() => setLoading(false))
+            ), 2000)
+        )}
+        promise()
+    }, [id])
+   
     return (
         <main>
-            <ItemList  item={item} loading={loading}/>
+            <ItemList  item={item} loading={loading}/> 
         </main>
     )
 }

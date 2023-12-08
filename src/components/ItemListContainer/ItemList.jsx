@@ -8,7 +8,7 @@ export const ItemList = ({ item, loading }) => {
             {loading ? (
                 <div>Loading..</div>
             ) : (
-                item.map(item => <Item key={item.key} item={item} /> )
+                item.map(item => <Item key={item.id} item={item} /> )
                         
             )}
         </Container >   

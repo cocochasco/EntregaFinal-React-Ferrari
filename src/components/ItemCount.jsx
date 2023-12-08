@@ -19,8 +19,7 @@ export const ItemCount = ({initial, onAdd, stock }) => {
         setStateCount(initial)
     }
     
-    
-    return (//Convertr el h3 en input pero que a la vez muestre el stateCount
+    return (
          <>
             <div style={{display: "flex"}}>
                 <button onClick={decrease}>-</button>
@@ -28,10 +27,6 @@ export const ItemCount = ({initial, onAdd, stock }) => {
                 <button onClick={increase}>+</button>
                 <button onClick={add}>Agregar al carrito</button>
                 </div>
-         </>
-     
+         </>    
     )
 }
-
-
-

@@ -6,9 +6,9 @@ import { getFirestore, doc, getDoc } from "firebase/firestore"
 import { ItemDetail} from "./ItemDetail"
 
 export const ItemDetailContainer = () => {
-    const [itemId, setItemId] = useState(null)
+    const [itemId, setItemId] = useState(null);
 
-    const {id} = useParams()
+    const {id} = useParams();
 
     useEffect(() => {
         const database = getFirestore();
@@ -19,18 +19,6 @@ export const ItemDetailContainer = () => {
             setItemId({id: snapshot.id, ...snapshot.data()})
         })
     }, [id])
-   
-  /*   useEffect(() => {
-        const promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(products);
-            }, 2000);
-        });
-        promise.then( () => {
-            const findItemById = products.find( (item) => item.id === Number(id) );
-            setItemId(findItemById)
-        })
-    }, [id]) */
     
     return (
         itemId ? 
@@ -39,5 +27,5 @@ export const ItemDetailContainer = () => {
             <Container className="d-flex flex-wrap mt-3 justify-content-center ">
                 <div>Loading...</div>
             </Container>
-        )
+    )
 }

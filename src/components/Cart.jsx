@@ -10,6 +10,7 @@ import {
 
 import { CartContext } from "../contexts/CartContext"
 
+
 const initialValues = {
     name: "",
     phone:"",
@@ -56,7 +57,6 @@ export const Cart = () => {
         });
       };
     
-
     if (items.length === 0) {
         return (
             <Container className="d-flex flex-column mt-3 align-items-center w-50" >
